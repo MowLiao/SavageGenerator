@@ -1,0 +1,136 @@
+<resources>
+    <string name="app_name">Savage Generator</string>
+    <string name="titleStart">Savage Worlds\nCharacter Creator</string>
+    <string name="titleSelect">Select a character:</string>
+    <string name="buttonStart">Start</string>
+    <string name="buttonCreate">Create New</string>
+    <string name="characterIcon">Character Icon</string>
+    <string name="clearallbutton">clear all</string>
+
+    <string-array name="dice_array">
+        <item>--Select</item>
+        <item>d4</item>
+        <item>d6</item>
+        <item>d8</item>
+        <item>d10</item>
+        <item>d12</item>
+    </string-array>
+
+    <string-array name="race_array">
+        <item>--Select</item>
+        <item>Android</item>
+        <item>Atlantean</item>
+        <item>Avion</item>
+        <item>Dwarf</item>
+        <item>Elf</item>
+        <item>Half-Elf</item>
+        <item>Half-Folk</item>
+        <item>Half-Orc</item>
+        <item>Human</item>
+        <item>Rakashan</item>
+        <item>Saurian</item>
+    </string-array>
+
+    <string-array name="skill_array">
+        <item>--Add Skill</item>
+        <item>Boating (Agility)</item>
+        <item>Climbing (Strength)</item>
+        <item>Driving (Agility)</item>
+        <item>Fighting (Agility)</item>
+        <item>Gambling (Smarts)</item>
+        <item>Healing (Smarts)</item>
+        <item>Intimidation (Spirit)</item>
+        <item>Investigation (Smarts)</item>
+        <item>Knowledge (Smarts)</item>
+        <item>Lockpicking (Agility)</item>
+        <item>Notice (Smarts)</item>
+        <item>Persuasion (Spirit)</item>
+        <item>Piloting (Agility)</item>
+        <item>Repair (Smarts)</item>
+        <item>Riding (Agility)</item>
+        <item>Shooting (Agility)</item>
+        <item>Stealth (Agility)</item>
+        <item>Streetwise (Smarts)</item>
+        <item>Survival (Smarts)</item>
+        <item>Swimming (Agility)</item>
+        <item>Taunt (Smarts)</item>
+        <item>Throwing (Agility)</item>
+        <item>Tracking (Smarts)</item>
+    </string-array>
+
+    <string-array name="edge_array">
+        <item>--Add Edge</item>
+        <item>Alertness</item>
+        <item>Beast Bond</item>
+        <item>Berserk</item>
+        <item>Connections</item>
+        <item>Danger Sense</item>
+        <item>Luck</item>
+        <item>Noble</item>
+        <item>Rich</item>
+        <item>Sweep</item>
+    </string-array>
+
+    <string-array name="minhindrance_array">
+        <item>--Add Minor Hindrance</item>
+        <item>All Thumbs</item>
+        <item>Anemic</item>
+        <item>Bad Eyes</item>
+        <item>Big Mouth</item>
+        <item>Cautious</item>
+        <item>Death Wish</item>
+        <item>Delusional</item>
+        <item>Doubting Thomas</item>
+        <item>Enemy</item>
+        <item>Greedy</item>
+        <item>Habit</item>
+        <item>Hard of Hearing</item>
+        <item>Illiterate</item>
+        <item>Loyal</item>
+        <item>Mean</item>
+        <item>Obese</item>
+        <item>Outsider</item>
+        <item>Pacifist</item>
+        <item>Phobia</item>
+        <item>Poverty</item>
+        <item>Quirk</item>
+        <item>Stubborn</item>
+        <item>Ugly</item>
+        <item>Vengeful</item>
+        <item>Vow</item>
+        <item>Wanted</item>
+    </string-array>
+
+    <string-array name="majhindrance_array">
+        <item>--Add Major Hindrance</item>
+        <item>Arrogant</item>
+        <item>Bad Eyes</item>
+        <item>Bad Luck</item>
+        <item>Blind</item>
+        <item>Bloodthirsty</item>
+        <item>Clueless</item>
+        <item>Code of Honour</item>
+        <item>Curious</item>
+        <item>Delusional</item>
+        <item>Elderly</item>
+        <item>Enemy</item>
+        <item>Greedy</item>
+        <item>Habit</item>
+        <item>Hard of Hearing</item>
+        <item>Heroic</item>
+        <item>Lame</item>
+        <item>One Arm</item>
+        <item>One Eye</item>
+        <item>One Leg</item>
+        <item>Overconfident</item>
+        <item>Pacifist</item>
+        <item>Phobia</item>
+        <item>Small</item>
+        <item>Vengeful</item>
+        <item>Vow</item>
+        <item>Wanted</item>
+        <item>Yellow</item>
+        <item>Young</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+ ! Layout of the start screen of the application Savage Generator. See README.txt for me info.
+ !
+ ! Created by Melissa Liau on 09/12/2015.
+ ! Last edited on: 16/12/2016.
+ !-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainScreen"
+    android:padding="0dp"
+    android:background="@drawable/titlebackground"
+    android:theme="@style/AppTheme.NoActionBar">
+
+    <TextView android:text="@string/titleStart" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="#B6924E"
+        android:textSize="35sp"
+        android:id="@+id/titleStart"
+        android:textStyle="bold"
+        android:typeface="normal"
+        android:shadowColor="#8B633F"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonStart"
+        android:id="@+id/buttonStart"
+        android:minWidth="100dp"
+        android:contextClickable="false"
+        android:enabled="true"
+        android:textSize="18sp"
+        android:clickable="true"
+        android:onClick="handleStartClick"
+        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="38dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/swIconStart"
+        android:src="@drawable/swfan"
+        android:maxHeight="50dp"
+        android:maxWidth="50dp"
+        android:padding="20dp"
+        android:layout_alignEnd="@+id/titleStart"
+        android:layout_above="@+id/titleStart"
+        android:layout_alignStart="@+id/titleStart" />
+</RelativeLayout>

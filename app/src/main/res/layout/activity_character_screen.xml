@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+ ! Layout for the character creation screen.
+ !
+ ! Created by Melissa Liau on 09/12/2015.
+ ! Last edited on: 16/12/2016.
+ !-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.savagegenerator.CharacterScreen"
+    android:background="@drawable/pagesbackground"
+    android:orientation="vertical"
+    android:gravity="top"
+    android:id="@+id/wholecharacterscreen"
+    android:onClick="clearallbuttonactivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp" >
+
+        <Button
+            android:id="@+id/buttonContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="saveButtonClick"/>
+
+        <ImageButton
+            android:id="@+id/characterImageButton"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:onClick="iconClickActivity"
+            android:scaleType="fitCenter"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/characterImageButton"
+            android:layout_toStartOf="@+id/buttonContinue"
+            android:paddingLeft="15dp"
+            android:textAlignment="center">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="top"
+                android:gravity="left"
+                android:paddingTop="15dp">
+
+                <ImageView
+                    android:id="@+id/iconCharisma"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_column="0"
+                    android:src="@drawable/speech"
+                    android:paddingLeft="7dp"
+                    android:paddingRight="7dp"
+                    android:nestedScrollingEnabled="false"/>
+
+                <ImageView
+                    android:id="@+id/iconPace"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_column="1"
+                    android:src="@drawable/footprint"
+                    android:paddingLeft="7dp"
+                    android:paddingRight="7dp"
+                    android:longClickable="true"/>
+
+                <ImageView
+                    android:id="@+id/iconParry"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_column="2"
+                    android:src="@drawable/sword"
+                    android:paddingLeft="7dp"
+                    android:paddingRight="7dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/iconToughness"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_column="3"
+                    android:src="@drawable/shield"
+                    android:paddingLeft="7dp"
+                    android:paddingRight="7dp"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="top"
+                android:paddingTop="5dp"
+                >
+
+                <TextView
+                    android:id="@+id/iconCharismaNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textStyle="bold"
+                    android:layout_column="0"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/iconPaceNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textStyle="bold"
+                    android:layout_column="1"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/iconParryNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textStyle="bold"
+                    android:layout_column="2"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/iconToughnessNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textStyle="bold"
+                    android:layout_column="3"
+                    android:textAlignment="center"/>
+
+            </TableRow>
+
+        </TableLayout>
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/characterName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:textStyle="bold"
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/colorPrimary"
+        android:textAlignment="center"/>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/scrollMainBody"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/professionLayout"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/professionTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Profession:"
+                    android:layout_column="0"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"/>
+
+                <EditText
+                    android:id="@+id/editProfession"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_span="2"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/colorDefaultText"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/raceTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Race:"
+                    android:layout_column="0"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:paddingTop="10dp"/>
+
+                <Spinner
+                    android:id="@+id/spinnerRace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:spinnerMode="dropdown"
+                    android:paddingLeft="5dp"/>
+            </LinearLayout>
+
+            <TableLayout
+                android:id="@+id/raceAttributeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.27"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:id="@+id/attributesTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Attributes"
+                        android:layout_column="0"
+                        android:textStyle="bold"
+                        android:paddingRight="10dp"
+                        android:textColor="@color/colorPrimaryDark"/>
+
+                    <TextView
+                        android:id="@+id/valueTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Value"
+                        android:layout_column="1"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"/>
+
+                    <TextView
+                        android:id="@+id/modifierTitle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Modifier"
+                        android:layout_column="2"
+                        android:textStyle="bold"
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/colorPrimaryDark"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/attributesCharisma"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Charisma"
+                        android:layout_column="0"
+                        android:textStyle="bold"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5dp" />
+
+                    <TextView
+                        android:id="@+id/pointsCharisma"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="-"
+                        android:textAlignment="center"
+                        android:layout_column="1" />
+
+                    <TextView
+                        android:id="@+id/modifierCharisma"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="0"
+                        android:textAlignment="center"
+                        android:layout_column="2" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/attributesPace"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pace"
+                        android:layout_column="0"
+                        android:textStyle="bold"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5dp" />
+
+                    <TextView
+                        android:id="@+id/pointsPace"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="-"
+                        android:textAlignment="center"
+                        android:layout_column="1" />
+
+                    <TextView
+                        android:id="@+id/modifierPace"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="0"
+                        android:layout_column="2"
+                        android:textAlignment="center" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/attributesParry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Parry"
+                        android:layout_column="0"
+                        android:textStyle="bold"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5dp" />
+
+                    <TextView
+                        android:id="@+id/pointsParry"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="-"
+                        android:textAlignment="center"
+                        android:layout_column="1" />
+
+                    <TextView
+                        android:id="@+id/modifierParry"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="0"
+                        android:layout_column="2"
+                        android:textAlignment="center" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/attributesToughness"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Toughness"
+                        android:layout_column="0"
+                        android:textStyle="bold"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5dp" />
+
+                    <TextView
+                        android:id="@+id/pointsToughness"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="-"
+                        android:textAlignment="center"
+                        android:layout_column="1" />
+
+                    <TextView
+                        android:id="@+id/modifierToughness"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="0"
+                        android:layout_column="2"
+                        android:textAlignment="center" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:id="@+id/diceTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Die"
+                        android:layout_column="1"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"/>
+
+                    <TextView
+                        android:id="@+id/modifierTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Modifier"
+                        android:layout_column="2"
+                        android:textStyle="bold"
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/colorPrimaryDark"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/attributesAgility"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Agility"
+                        android:gravity="center_vertical"
+                        android:layout_column="0"
+                        android:paddingLeft="5dp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinnerAgility"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:textAlignment="center"
+                        android:spinnerMode="dropdown" />
+
+                    <TextView
+                        android:id="@+id/modifierAgility"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="0"
+                        android:layout_column="2"
+                        android:textAlignment="center"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/attributesSmarts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Smarts"
+                        android:layout_column="0"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5dp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinnerSmarts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:textAlignment="center"
+                        android:spinnerMode="dropdown" />
+
+                    <TextView
+                        android:id="@+id/modifierSmarts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="0"
+                        android:textAlignment="center"
+                        android:layout_column="2" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/attributesSpirit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Spirit"
+                        android:layout_column="0"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5dp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinnerSpirit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:textAlignment="center"
+                        android:spinnerMode="dropdown" />
+
+                    <TextView
+                        android:id="@+id/modifierSpirit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="0"
+                        android:textAlignment="center"
+                        android:layout_column="2" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/attributesStrength"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Strength"
+                        android:layout_column="0"
+                        android:textStyle="bold"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5dp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerStrength"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:textAlignment="center"
+                        android:spinnerMode="dropdown" />
+
+                    <TextView
+                        android:id="@+id/modifierStrength"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="0"
+                        android:textAlignment="center"
+                        android:layout_column="2" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/attributesVigor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Vigor"
+                        android:layout_column="0"
+                        android:textStyle="bold"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5dp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerVigor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:textAlignment="center"
+                        android:spinnerMode="dropdown" />
+
+                    <TextView
+                        android:id="@+id/modifierVigor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="0"
+                        android:layout_column="2"
+                        android:textAlignment="center" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/skillsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                    android:layout_marginTop="15dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                        android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/skillTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Skill"
+                        android:layout_column="0"
+                        android:textStyle="bold"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:paddingRight="5dp"/>
+
+                    <TextView
+                        android:id="@+id/diceTitle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Die"
+                        android:layout_column="1"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:paddingLeft="5dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:paddingRight="5dp"/>
+
+                    <TextView
+                        android:id="@+id/modifierTitle3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Modifier"
+                        android:layout_column="2"
+                        android:textStyle="bold"
+                        android:paddingLeft="5dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:paddingRight="5dp"/>
+
+                </TableRow>
+
+            </TableLayout>
+
+            <Spinner
+                android:id="@+id/spinnerSkillsAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:spinnerMode="dropdown"
+                android:layout_gravity="right" />
+
+            <TableLayout
+                android:id="@+id/edgesLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/edgesTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Edges"
+                        android:layout_column="0"
+                        android:textStyle="bold"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:paddingRight="100dp"/>
+                </TableRow>
+
+            </TableLayout>
+
+            <Spinner
+                android:id="@+id/spinnerEdgesAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:spinnerMode="dropdown"
+                android:layout_gravity="right" />
+
+            <TableLayout
+                android:id="@+id/minHindLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/minHindTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Minor Hindrances"
+                        android:layout_column="0"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:paddingRight="5dp"/>
+                </TableRow>
+
+            </TableLayout>
+
+            <Spinner
+                android:id="@+id/spinnerMinHindAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                android:textAlignment="textEnd"
+                android:layout_gravity="right" />
+
+            <TableLayout
+                android:id="@+id/majHindLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/majHindTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Major Hindrances"
+                        android:layout_column="0"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:paddingRight="5dp"/>
+                </TableRow>
+
+            </TableLayout>
+
+            <Spinner
+                android:id="@+id/spinnerMajHindAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                android:textAlignment="textEnd"
+                android:layout_gravity="right" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

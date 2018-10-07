@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+ ! Layout for the character selection list.
+ !
+ ! Created by Melissa Liau on 09/12/2015.
+ ! Last edited on: 16/12/2016.
+ !-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/characterIcon"
+            android:minWidth="60dp"
+            android:minHeight="60dp"
+            android:contentDescription="@string/characterIcon"
+            android:layout_gravity="top"
+            android:padding="5dp"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/characterName"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:minHeight="60dp"
+            android:paddingRight="15dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/characterIcon"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
